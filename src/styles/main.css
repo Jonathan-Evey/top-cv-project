@@ -1,16 +1,21 @@
 main {
 	display: flex;
-	height: calc(85vh - 2rem);
+	min-height: calc(85vh - 2rem);
 	margin: 1rem 1.5rem;
 }
 
 .form-container {
-	height: 100%;
-	width: 70vw;
+	flex: 2;
 	background-color: rgb(178, 216, 218);
+	padding: 1rem;
 	margin-right: 1rem;
 	box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.65),
 		4px 4px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+form fieldset:nth-child(1),
+form fieldset:nth-child(2) {
+	margin-bottom: 1rem;
 }
 
 .sidebar-container {
