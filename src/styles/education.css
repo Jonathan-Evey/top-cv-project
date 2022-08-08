@@ -1,0 +1,9 @@
+.study-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.study-container input {
+	flex: 1;
+}
