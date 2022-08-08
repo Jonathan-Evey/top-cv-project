@@ -6,7 +6,7 @@ export class App extends Component {
 	render() {
 		return (
 			<div className="App">
-        <Header />
+        		<Header />
 				<Main />
 			</div>
 		);
