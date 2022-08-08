@@ -2,7 +2,7 @@ Header {
 	display: flex;
 	align-items: center;
 	padding-left: 3rem;
-	height: 15vh;
+	height: 10vh;
 	width: 100vw;
 	background-color: cadetblue;
 	box-shadow: 2px 0 5px 1px rgba(0, 0, 0, 0.65),
