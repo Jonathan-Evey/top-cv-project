@@ -1,0 +1,11 @@
+fieldset {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem 1rem;
+}
+
+.name-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
