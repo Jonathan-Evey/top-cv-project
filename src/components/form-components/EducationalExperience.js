@@ -8,13 +8,13 @@ export class EducationalExperience extends Component {
           <legend>Educational Experience</legend>
           
           <label htmlFor="">Highest Educational Experience:</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id="" placeholder="High School, GED, Bachelor's Degree, ect"/>
 
           <label htmlFor="">School Name:</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id="" placeholder="Example University of Washington" />
 
           <label htmlFor="">Title of Study:</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="" id="" placeholder="Computer Science" />
 
           <fieldset className='study-container'>
             <legend>Dates of Study</legend>
@@ -25,6 +25,7 @@ export class EducationalExperience extends Component {
             <input type="date" name="" id="" /> 
             
           </fieldset>
+          <button>Save</button>
       </fieldset>
     )
   }
