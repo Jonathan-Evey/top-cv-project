@@ -1,68 +1,64 @@
 import React, { Component } from "react";
 import "/home/gunnar/Desktop/cv-project/src/styles/generalInfo.css";
+import Input from "../Input";
 
 export class GeneralInfo extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
-		this.state = {
-			firstName: "",
-			lastName: "",
-			email: "",
-			phoneNumber: null,
-		};
+		this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+		this.handleLastNameChange = this.handleLastNameChange.bind(this);
 
-		this.updateFirstName = this.updateFirstName.bind(this);
-		this.updateLastName = this.updateLastName.bind(this);
-		this.updateEmail = this.updateEmail.bind(this);
-		this.updatePhoneNumber = this.updatePhoneNumber.bind(this);
+		// this.state = {
+		// 	firstName: "",
+		// 	lastName: "",
+		// 	email: "",
+		// 	phoneNumber: null,
+		// };
+
+		// this.updateFirstName = this.updateFirstName.bind(this);
+		// this.updateLastName = this.updateLastName.bind(this);
+		// this.updateEmail = this.updateEmail.bind(this);
+		// this.updatePhoneNumber = this.updatePhoneNumber.bind(this);
 
 		// this.saveGeneralInfo = this.saveGeneralInfo.bind(this);
 	}
-	updateFirstName(e) {
-		this.setState({
-			firstName: e.target.value,
-		});
+
+	handleFirstNameChange(value) {
+		console.log(value);
+		this.props.onGeneralInfoChange("firstName", value);
 	}
-	updateLastName(e) {
-		this.setState({
-			lastName: e.target.value,
-		});
-	}
-	updateEmail(e) {
-		this.setState({
-			email: e.target.value,
-		});
-	}
-	updatePhoneNumber(e) {
-		this.setState({
-			phoneNumber: e.target.value,
-		});
+
+	handleLastNameChange(value) {
+		console.log(value);
+		this.props.onGeneralInfoChange("lastName", value);
 	}
 
 	render() {
+		const firstName = this.props.generalInfoData.firstName;
+		const lastName = this.props.generalInfoData.lastName;
 		return (
 			<fieldset>
 				<legend>General Infromation</legend>
 				<div className="name-container">
 					<label htmlFor="first-name">First Name:</label>
-					<input
-						type="text"
+					<Input
+						inputType="text"
 						name=""
-						id="first-name"
-						placeholder="First Name"
-						value={this.state.firstName}
-						onChange={(e) => this.updateFirstName(e)}
+						inputId="first-name"
+						inputPlaceholder="First Name"
+						value={firstName}
+						onInputChange={this.handleFirstNameChange}
 					/>
 
 					<label htmlFor="last-name">Last Name:</label>
-					<input
+					<Input
 						type="text"
 						name=""
 						id="last-name"
 						placeholder="Last Name"
-						value={this.state.lastName}
-						onChange={(e) => this.updateLastName(e)}
+						value={lastName}
+						onInputChange={this.handleLastNameChange}
 					/>
 				</div>
 				<label htmlFor="email">Email Address:</label>
@@ -71,8 +67,8 @@ export class GeneralInfo extends Component {
 					name=""
 					id="email"
 					placeholder="example@email.come"
-					value={this.state.email}
-					onChange={(e) => this.updateEmail(e)}
+					// value={this.state.email}
+					// onChange={(e) => this.updateEmail(e)}
 				/>
 
 				<label htmlFor="phone-number">Phone Number:</label>
@@ -81,8 +77,8 @@ export class GeneralInfo extends Component {
 					name=""
 					id="phone-number"
 					placeholder="555-555-5555"
-					value={this.state.phoneNumber}
-					onChange={(e) => this.updatePhoneNumber(e)}
+					// value={this.state.phoneNumber}
+					// onChange={(e) => this.updatePhoneNumber(e)}
 				/>
 
 				<button>Save</button>
