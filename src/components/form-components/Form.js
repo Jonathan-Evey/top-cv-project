@@ -8,6 +8,9 @@ export class Form extends Component {
 		super(props);
 
 		this.handleGeneralInfoChange = this.handleGeneralInfoChange.bind(this);
+		this.handleEducationInfoChange =
+			this.handleEducationInfoChange.bind(this);
+
 		this.state = {
 			generalInfoData: {
 				firstName: "",
@@ -15,17 +18,17 @@ export class Form extends Component {
 				email: "",
 				phoneNumber: "",
 			},
+			educationData: {
+				degree: "",
+				school: "",
+				fieldOfStudy: "",
+				dateFrom: "",
+				dateTo: "",
+			},
 		};
 	}
 
-	updateFirstName(e) {
-		this.setState({
-			firstName: e.target.value,
-		});
-	}
 	handleGeneralInfoChange(id, value) {
-		console.log(id);
-		console.log(value);
 		if (id === "firstName") {
 			this.setState({
 				generalInfoData: {
@@ -60,15 +63,62 @@ export class Form extends Component {
 		}
 	}
 
+	handleEducationInfoChange(id, value) {
+		if (id === "degree") {
+			this.setState({
+				educationData: {
+					degree: value,
+				},
+			});
+			console.log(this.state.educationData.degree);
+		}
+		if (id === "school") {
+			this.setState({
+				educationData: {
+					school: value,
+				},
+			});
+			console.log(this.state.educationData.school);
+		}
+		if (id === "fieldOfStudy") {
+			this.setState({
+				educationData: {
+					fieldOfStudy: value,
+				},
+			});
+			console.log(this.state.educationData.fieldOfStudy);
+		}
+		if (id === "dateFrom") {
+			this.setState({
+				educationData: {
+					dateFrom: value,
+				},
+			});
+			console.log(this.state.educationData.dateFrom);
+		}
+		if (id === "dateTo") {
+			this.setState({
+				educationData: {
+					dateTo: value,
+				},
+			});
+			console.log(this.state.educationData.dateTo);
+		}
+	}
+
 	render() {
 		const generalInfoData = this.state.generalInfoData;
+		const educationData = this.state.educationData;
 		return (
 			<form action="">
 				<GeneralInfo
 					generalInfoData={generalInfoData}
 					onGeneralInfoChange={this.handleGeneralInfoChange}
 				/>
-				<EducationalExperience />
+				<EducationalExperience
+					educationData={educationData}
+					onEducationInfoChange={this.handleEducationInfoChange}
+				/>
 				<PracticalExperience />
 			</form>
 		);
