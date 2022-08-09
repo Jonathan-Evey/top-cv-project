@@ -13,7 +13,7 @@ export class Form extends Component {
 				firstName: "",
 				lastName: "",
 				email: "",
-				phoneNumber: null,
+				phoneNumber: "",
 			},
 		};
 	}
@@ -41,6 +41,22 @@ export class Form extends Component {
 				},
 			});
 			console.log(this.state.generalInfoData.lastName);
+		}
+		if (id === "email") {
+			this.setState({
+				generalInfoData: {
+					email: value,
+				},
+			});
+			console.log(this.state.generalInfoData.email);
+		}
+		if (id === "phoneNumber") {
+			this.setState({
+				generalInfoData: {
+					phoneNumber: value,
+				},
+			});
+			console.log(this.state.generalInfoData.phoneNumber);
 		}
 	}
 
