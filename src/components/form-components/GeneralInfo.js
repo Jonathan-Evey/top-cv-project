@@ -8,20 +8,8 @@ export class GeneralInfo extends Component {
 
 		this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
 		this.handleLastNameChange = this.handleLastNameChange.bind(this);
-
-		// this.state = {
-		// 	firstName: "",
-		// 	lastName: "",
-		// 	email: "",
-		// 	phoneNumber: null,
-		// };
-
-		// this.updateFirstName = this.updateFirstName.bind(this);
-		// this.updateLastName = this.updateLastName.bind(this);
-		// this.updateEmail = this.updateEmail.bind(this);
-		// this.updatePhoneNumber = this.updatePhoneNumber.bind(this);
-
-		// this.saveGeneralInfo = this.saveGeneralInfo.bind(this);
+		this.handleEmailChange = this.handleEmailChange.bind(this);
+		this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
 	}
 
 	handleFirstNameChange(value) {
@@ -34,9 +22,20 @@ export class GeneralInfo extends Component {
 		this.props.onGeneralInfoChange("lastName", value);
 	}
 
+	handleEmailChange(value) {
+		this.props.onGeneralInfoChange("email", value);
+	}
+
+	handlePhoneNumberChange(value) {
+		this.props.onGeneralInfoChange("phoneNumber", value);
+	}
+
 	render() {
 		const firstName = this.props.generalInfoData.firstName;
 		const lastName = this.props.generalInfoData.lastName;
+		const email = this.props.generalInfoData.email;
+		const phoneNumber = this.props.generalInfoData.phoneNumber;
+
 		return (
 			<fieldset>
 				<legend>General Infromation</legend>
@@ -55,30 +54,30 @@ export class GeneralInfo extends Component {
 					<Input
 						type="text"
 						name=""
-						id="last-name"
-						placeholder="Last Name"
+						inputId="last-name"
+						inputPlaceholder="Last Name"
 						value={lastName}
 						onInputChange={this.handleLastNameChange}
 					/>
 				</div>
 				<label htmlFor="email">Email Address:</label>
-				<input
+				<Input
 					type="email"
 					name=""
-					id="email"
-					placeholder="example@email.come"
-					// value={this.state.email}
-					// onChange={(e) => this.updateEmail(e)}
+					inputId="email"
+					inputPlaceholder="example@email.come"
+					value={email}
+					onInputChange={this.handleEmailChange}
 				/>
 
 				<label htmlFor="phone-number">Phone Number:</label>
-				<input
+				<Input
 					type="tel"
 					name=""
-					id="phone-number"
-					placeholder="555-555-5555"
-					// value={this.state.phoneNumber}
-					// onChange={(e) => this.updatePhoneNumber(e)}
+					inputId="phone-number"
+					inputPlaceholder="555-555-5555"
+					value={phoneNumber}
+					onInputChange={this.handlePhoneNumberChange}
 				/>
 
 				<button>Save</button>
